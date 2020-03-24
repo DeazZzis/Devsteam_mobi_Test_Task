@@ -7,12 +7,17 @@ class Photo {
   final int likes;
   final DateTime createdAt;
 
-  Photo({this.small, this.regular, this.description, this.altDescription,
-    this.username, this.likes, this.createdAt});
+  Photo(
+      {this.small,
+      this.regular,
+      this.description,
+      this.altDescription,
+      this.username,
+      this.likes,
+      this.createdAt});
 
   Photo.fromJson(Map json)
-      :
-        small = json['urls']['small'],
+      : small = json['urls']['small'],
         regular = json['urls']['regular'],
         description = json['description'],
         altDescription = json['alt_description'],
