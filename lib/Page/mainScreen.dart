@@ -40,12 +40,14 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Theme
+            .of(context)
+            .primaryColor,
         appBar: AppBar(
             title: Text(
-          'Unsplash',
-          textAlign: TextAlign.center,
-        )),
+              'Unsplash',
+              textAlign: TextAlign.center,
+            )),
         body: _buildList());
   }
 
@@ -66,59 +68,95 @@ class _MainScreenState extends State<MainScreen> {
           return Container(
               height: 125.0,
               child: Card(
-                elevation: 2.0,
-                margin: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                child: Container(
-                    decoration:
-                        BoxDecoration(color: Color.fromRGBO(50, 65, 85, 0.9)),
-                    child: Row(children: [
-                      Container(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-                          child: Image.network(
-                            _photos[i].small,
-                            fit: BoxFit.contain,
-                            height: 110,
-                            width: MediaQuery.of(context).size.width * 0.3,
-                          )),
-                      Container(
-                        padding:
+                  elevation: 2.0,
+                  margin: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  child: Container(
+                      decoration:
+                      BoxDecoration(color: Color.fromRGBO(50, 65, 85, 0.9)),
+                      child: Row(children: [
+                        Container(
+                            padding:
+                            EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                            child: Image.network(
+                              _photos[i].small,
+                              fit: BoxFit.contain,
+                              height: 110,
+                              width: MediaQuery
+                                  .of(context)
+                                  .size
+                                  .width * 0.3,
+                            )),
+                        Container(
+                            padding:
                             EdgeInsets.symmetric(horizontal: 4, vertical: 8),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.6,
-                                  child: Text(
-                                    _chooseDescription(_photos[i].description,
-                                        _photos[i].altDescription),
-                                    maxLines: 3,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                        fontSize: 20.0,
-                                        fontWeight: FontWeight.bold,
-                                        color: Theme.of(context)
-                                            .textTheme
-                                            .title
-                                            .color),
-                                  )),
-                              Container(
-                                  padding: EdgeInsets.only(top: 4.0),
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.6,
-                                  child: Text("\@" + _photos[i].username,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(
-                                          fontSize: 14.0,
-                                          color: Theme.of(context)
+                            child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                      width:
+                                      MediaQuery
+                                          .of(context)
+                                          .size
+                                          .width * 0.6,
+                                      child: Text(
+                                        _chooseDescription(
+                                            _photos[i].description,
+                                            _photos[i].altDescription),
+                                        maxLines: 3,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold,
+                                            color: Theme
+                                                .of(context)
+                                                .textTheme
+                                                .title
+                                                .color),
+                                      )),
+                                  Container(
+                                    padding: EdgeInsets.only(top: 2.0),
+                                    width:
+                                    MediaQuery
+                                        .of(context)
+                                        .size
+                                        .width * 0.6,
+                                    child: Row(children: [
+                                    Text("\@" + _photos[i].username,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(
+                                            fontSize: 16.0,
+                                            color: Theme
+                                                .of(context)
+                                                .textTheme
+                                                .title
+                                                .color)),
+                                    Container(
+                                        padding: EdgeInsets.only(left: 4.0),
+                                        child: Icon(
+                                          Icons.favorite,
+                                          color: Theme
+                                              .of(context)
                                               .textTheme
                                               .title
-                                              .color)))
-                            ]),
-                      )
-                    ])),
-              ));
+                                              .color,
+                                          size: 18.0,
+                                          semanticLabel: 'Text to announce in accessibility modes',
+                                        )
+                                    ),
+                                    Text(_photos[i].likes.toString(),
+                                        overflow: TextOverflow.ellipsis,
+                                        style: TextStyle(
+                                            fontSize: 16.0,
+                                            color: Theme
+                                                .of(context)
+                                                .textTheme
+                                                .title
+                                                .color))
+                                ]))
+                      ])
+                  )
+                  ])),)
+          );
         });
   }
 }
