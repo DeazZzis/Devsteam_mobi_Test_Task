@@ -1,6 +1,5 @@
 class Photo {
   final String small;
-  final String regular;
   final String description;
   final String altDescription;
   final String username;
@@ -9,7 +8,6 @@ class Photo {
 
   Photo(
       {this.small,
-      this.regular,
       this.description,
       this.altDescription,
       this.username,
@@ -18,7 +16,6 @@ class Photo {
 
   Photo.fromJson(Map json)
       : small = json['urls']['small'],
-        regular = json['urls']['regular'],
         description = json['description'],
         altDescription = json['alt_description'],
         username = json['user']['username'],
