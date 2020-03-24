@@ -10,17 +10,11 @@ class MainWidget extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          brightness: Brightness.light,
-          primaryColor: Color.fromARGB(0, 0, 184, 148),
-          accentColor: Color.fromARGB(1, 255, 118, 117),
-          fontFamily: "Fira Code",
-          textTheme: TextTheme(
-            headline: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-            title: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
-            body1: TextStyle(fontSize: 14.0, fontFamily: 'Fira Code'),
-          ),
-        ),
-        home: MainScreen()
-    );
+            primaryColor: Color.fromRGBO(50, 65, 85, 1),
+            textTheme: TextTheme(
+              title:
+                  TextStyle(color: Colors.white70, fontWeight: FontWeight.bold),
+            )),
+        home: MainScreen());
   }
 }
